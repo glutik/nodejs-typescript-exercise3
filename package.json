@@ -1,0 +1,40 @@
+{
+  "name": "exercise",
+  "version": "1.0.0",
+  "description": "Exercise 2",
+  "main": "index.js",
+  "scripts": {
+    "build:run": "tsc",
+    "build:clean": "rimraf dist",
+    "build": "npm run build:clean && npm run build:run",
+    "serve": "node dist/index.js",
+    "start": "nodemon",
+    "dev": "ts-node src/index.ts",
+    "lint:ts": "./node_modules/.bin/tslint --project . --format codeFrame",
+    "lint:ts:fix": "npm -s run lint:ts -- --fix"
+  },
+  "author": "K.A.G.",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.5",
+    "@types/express": "^4.17.0",
+    "@types/express-winston": "^3.0.3",
+    "@types/joi": "^14.3.3",
+    "@types/node": "^12.6.2",
+    "@types/uuid": "^3.4.5",
+    "@types/winston": "^2.4.4",
+    "nodemon": "^1.19.1",
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-winston": "^3.2.1",
+    "joi": "^14.3.1",
+    "uuid": "^3.3.2",
+    "winston": "^3.2.1"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "id": "1bff90f0-a56e-11e9-9e3e-8953dc8ea618",
+      "categoryId": "55563750-a56e-11e9-96ea-01dfbc6095ef",
+      "name": "iRobot Roomba 980",
+      "itemsInStock": 5
+    },
+    {
+      "id": "1bffb800-a56e-11e9-9e3e-8953dc8ea618",
+      "categoryId": "55563750-a56e-11e9-96ea-01dfbc6095ef",
+      "name": "Xiaomi MiJia",
+      "itemsInStock": 2
+    }
+  ]
+}
