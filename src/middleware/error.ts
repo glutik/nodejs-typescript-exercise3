@@ -23,3 +23,10 @@ export function errorHandler(err: Error, req: Request, res: Response, next: Next
     res.render('error', { error: err });
 }
 
+export function joiError(err: any, req: Request, res: Response, next: NextFunction) {
+    if (err && err.isJoi) {
+        res.status(400).send(err.details);
+    } else {
+        next(err);
+    }
+}
