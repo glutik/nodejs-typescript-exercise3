@@ -2,16 +2,16 @@ import {NextFunction, Request, Response} from 'express';
 import {Category, Product} from '../models';
 
 const productsData = require('../data/products.json');
-const products: Product[] = productsData.products;
+const productsJson: Product[] = productsData.products;
 const categoriesData = require('../data/categories.json');
-const categories: Category[] = categoriesData.categories;
+const categoriesJson: Category[] = categoriesData.categories;
 
 export function loadProducts(): Promise<Product[]> {
-    return Promise.resolve(products);
+    return Promise.resolve(productsJson);
 }
 
 export function loadCategories(): Promise<Category[]> {
-    return Promise.resolve(categories);
+    return Promise.resolve(categoriesJson);
 }
 
 export function loadProductsMw(req: Request, res: Response, next: NextFunction) {

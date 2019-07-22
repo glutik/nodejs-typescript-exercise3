@@ -6,11 +6,11 @@ import {
     loadCategories,
     loadCategoriesMw,
     resolveCategoriesFromResponse
-} from "../utils/utils";
-import {checkIndexLengthOrBadRequest} from "../utils/utils";
-import {loadProducts} from "../utils/utils";
-import {checkNameLengthOrConflict} from "../utils/utils";
-import {createLogger} from "../utils/log";
+} from '../utils/utils';
+import {checkIndexLengthOrBadRequest} from '../utils/utils';
+import {loadProducts} from '../utils/utils';
+import {checkNameLengthOrConflict} from '../utils/utils';
+import {createLogger} from '../utils/log';
 
 const router = express.Router();
 const logger = createLogger('Categories logger');
@@ -46,7 +46,7 @@ router.get('/:id/products',
         } catch (err) {
             next(err);
         }
-    }
+    },
 );
 
 router.get('/:id',
@@ -80,8 +80,8 @@ router.post('/',
                 res.status(201).send(categories);
             })
             .catch(next);
-    }
-)
+    },
+);
 
 router.put('/:id',
     checkIndexLengthOrBadRequest,
@@ -96,11 +96,11 @@ router.put('/:id',
             loadCategories().then(categories => {
                 categories[res.locals.entityIndex] = category;
                 res.status(200).send(category);
-            })
+            });
         } catch (err) {
             next(err);
         }
-    }
+    },
 );
 
 router.delete('/:id',
@@ -114,7 +114,7 @@ router.delete('/:id',
         } catch (err) {
             next(err);
         }
-    }
+    },
 );
 
 export {router};

@@ -10,7 +10,7 @@ const createLogger = (name: string) => {
             winston.format.json(),
         ),
         defaultMeta: {
-            name
+            name,
         },
     });
 };

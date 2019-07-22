@@ -1,11 +1,10 @@
 import {NextFunction, Request, Response} from 'express';
 
-export function customErrorHandler(error: Error, req: Request, res: Response, next: NextFunction){
-    if(error.message === 'input validation error'){
+export function customErrorHandler(error: Error, req: Request, res: Response, next: NextFunction) {
+    if (error.message === 'input validation error') {
         console.log('=== Input Validation Error ===');
         res.sendStatus(400);
-    }
-    else {
+    } else {
         next(error);
     }
 }

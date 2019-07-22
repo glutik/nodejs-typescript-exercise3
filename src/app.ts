@@ -2,9 +2,9 @@ import express from 'express';
 import {router as productsRouter} from './routers/products-router';
 import {router as categoriesRouter} from './routers/categories-router';
 import cors from 'cors';
-import {clientErrorHandler, customErrorHandler, errorHandler, joiError} from "./middleware/error";
+import {clientErrorHandler, customErrorHandler, errorHandler, joiError} from './middleware/error';
 import expressWinston from 'express-winston';
-import * as winston from "winston";
+import * as winston from 'winston';
 
 const app = express();
 const alignedWithColorsAndTime = winston.format.combine(

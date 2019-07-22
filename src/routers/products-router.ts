@@ -6,10 +6,10 @@ import {
     findProductsByIndexOrNotFound, loadProducts,
     loadProductsMw,
     resolveProductsFromResponse
-} from "../utils/utils";
-import {createLogger} from "../utils/log";
-import {productSchema} from "../validations/product";
-import {getOrThrow} from "../utils/validate";
+} from '../utils/utils';
+import {createLogger} from '../utils/log';
+import {productSchema} from '../validations/product';
+import {getOrThrow} from '../utils/validate';
 
 const router = express.Router();
 const logger = createLogger('Products logger');
@@ -24,7 +24,6 @@ router.get('/',
             next(err);
         }
     });
-
 
 router.get('/:id',
     checkIndexLengthOrBadRequest,
@@ -78,7 +77,7 @@ router.put('/:id',
                 loadProducts().then(products => {
                     products[res.locals.entityIndex] = product;
                     res.status(200).send(product);
-                })
+                });
             }
         } catch (err) {
             next(err);
