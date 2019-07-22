@@ -71,6 +71,7 @@ router.put('/:id',
         try {
             const {id} = req.params;
             // const product: Product = req.body;
+            req.body.id = id;
             const product: Product | undefined = getOrThrow<Product>(req.body, productSchema, next);
             if (product) {
                 product.id = id;
